@@ -18,6 +18,9 @@
     "type": "git",
     "url": "git+https://github.com/MahidharP/users-api.git"
   },
+  "scripts": {
+    "start": "node index.js"
+  },
   "engines": {
     "node": "12.18.3"
   },
