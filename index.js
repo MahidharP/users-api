@@ -40,10 +40,9 @@ app.get('/users/sort', (req, res) => {
         res.json(users)
     }
     const result = orderBy(users, [sortBy], [order])
-    // console.log(result)
     res.json(result)
 })
 
-app.listen(process.env.PORT || 5000, () => {
+app.listen(3033, () => {
     console.log('listening on port', 3033)
 })
