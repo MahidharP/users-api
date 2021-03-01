@@ -34,6 +34,28 @@ app.get('/users/filter', (req, res) => {
     res.json(result)
 })
 
+app.get('/users/filter/contains', (req, res) => {
+    const { search, field } = req.query
+    if (!search) {
+        res.json(users)
+    }
+    const result = users.filter((user) => {
+        return user[field].toLowerCase().includes(search.toLowerCase())
+    })
+    res.json(result)
+})
+
+app.get('/users/filter/equals', (req, res) => {
+    const { search, field } = req.query
+    if (!search) {
+        res.json(users)
+    }
+    const result = users.filter((user) => {
+        return user[field] === search
+    })
+    res.json(result)
+})
+
 app.get('/users/sort', (req, res) => {
     const { sortBy, order } = req.query
     if (!sortBy || !order) {
